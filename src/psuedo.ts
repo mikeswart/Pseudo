@@ -1,6 +1,6 @@
-function ConvertAndUpdate(sourceInput:HTMLInputElement, destinationElement:HTMLElement)
+function ConvertAndUpdate(sourceElement:HTMLTextAreaElement, destinationElement:HTMLTextAreaElement)
 {
-    destinationElement.innerHTML = Pseudo(sourceInput.value);
+    destinationElement.innerHTML = Pseudo(sourceElement.value);
 }
 
 function Pseudo(original: string): string

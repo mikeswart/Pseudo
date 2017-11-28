@@ -1,5 +1,6 @@
 function ConvertAndUpdate(sourceInput, destinationElement) {
     destinationElement.innerHTML = Pseudo(sourceInput.value);
+    destinationElement.style.height = sourceInput.style.height;
 }
 function Pseudo(original) {
     if (original.match("^\\d+$") != null) {
