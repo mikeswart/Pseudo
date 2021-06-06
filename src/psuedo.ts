@@ -1,12 +1,12 @@
-function ConvertAndUpdate(sourceElement:HTMLTextAreaElement, destinationElement:HTMLTextAreaElement)
-{
+function ConvertAndUpdate(
+    sourceElement: HTMLTextAreaElement,
+    destinationElement: HTMLTextAreaElement
+) {
     destinationElement.innerHTML = Pseudo(sourceElement.value);
 }
 
-function Pseudo(original: string): string
-{
-    if (original.match("^\\d+$") != null)
-    {
+function Pseudo(original: string): string {
+    if (original.match("^\\d+$") != null) {
         return original;
     }
 
@@ -28,8 +28,7 @@ function Pseudo(original: string): string
     original = original.replace("z", "ż");
 
     var startIndex = 0;
-    while (startIndex < original.length)
-    {
+    while (startIndex < original.length) {
         original = insert(original, startIndex, "~");
         startIndex += 5;
     }
@@ -41,7 +40,6 @@ function Pseudo(original: string): string
     return original;
 }
 
-function insert(str: string, index: number, value: string): string
-{
+function insert(str: string, index: number, value: string): string {
     return str.substr(0, index) + value + str.substr(index);
 }

@@ -1,0 +1,26 @@
+{
+    "name": "pseudo",
+    "version": "1.0.0",
+    "description": "Pseudo string generator",
+    "main": "./demo/scripts/psuedo.js",
+    "typings": "./demo/scripts/psuedo.d.ts",
+    "scripts": {
+        "prepare": "npm run build",
+        "build": "tsc",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ferrata/Pseudo.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ferrata/Pseudo/issues"
+    },
+    "homepage": "https://github.com/ferrata/Pseudo#readme",
+    "devDependencies": {
+        "live-server": "^1.2.1",
+        "typescript": "^4.3.2"
+    }
+}
