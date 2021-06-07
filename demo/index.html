@@ -15,13 +15,40 @@
                 onchange="ConvertAndUpdate(this, pseudoTarget);" oninput="this.onchange();"></textarea>
         </div>
         <div class="card">
-            <div class="card-header">
+            <div class="card-header d-flex align-items-center">
                 Pseduo Text
+                &nbsp;
+                <button id="copyToClipboard" class="btn btn-light" data-clipboard-target="#pseudoTarget">
+                    <img id="copyToClipboardIcon" src="assets/clipboard.svg" width="16" height="16"
+                        alt="Copy to clipboard" />
+                </button>
             </div>
             <div class="card-body">
                 <textarea id="pseudoTarget" class="form-control" readonly></textarea>
             </div>
         </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"
+        integrity="sha512-sIqUEnRn31BgngPmHt2JenzleDDsXwYO+iyvQ46Mw6RL+udAUZj2n/u/PGY80NxRxynO7R9xIGx5LEzw4INWJQ=="
+        crossorigin="anonymous"></script>
+
+    <script>
+        const button = document.getElementById("copyToClipboard");
+        const icon = document.getElementById("copyToClipboardIcon");
+        const clipboard = new ClipboardJS(button);
+
+        clipboard.on('success', function (e) {
+            icon.src = "assets/check2.svg";
+            window.setTimeout(function () {
+                icon.src = "assets/clipboard.svg";
+            }, 3000);
+        });
+
+        clipboard.on('error', function (e) {
+            console.error(e);
+        });
+    </script>
 </body>
 
 </html>
