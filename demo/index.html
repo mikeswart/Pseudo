@@ -10,18 +10,23 @@
 
 <body>
     <div class="card">
-        <div class="card-header">Source</div>
+        <div class="card-header">
+            Source
+            &nbsp;
+            <button class="btn btn-light" data-clipboard-target="#source">
+                <img src="assets/clipboard.svg" width="16" height="16" alt="Copy to clipboard" />
+            </button>
+        </div>
         <div class="card-body">
-            <textarea placeholder="Text to convert here" class="form-control" cols="40" rows="5"
+            <textarea id="source" placeholder="Text to convert here" class="form-control" cols="40" rows="5"
                 onchange="ConvertAndUpdate(this, pseudoTarget);" oninput="this.onchange();"></textarea>
         </div>
         <div class="card">
             <div class="card-header d-flex align-items-center">
                 Pseduo Text
                 &nbsp;
-                <button id="copyToClipboard" class="btn btn-light" data-clipboard-target="#pseudoTarget">
-                    <img id="copyToClipboardIcon" src="assets/clipboard.svg" width="16" height="16"
-                        alt="Copy to clipboard" />
+                <button class="btn btn-light" data-clipboard-target="#pseudoTarget">
+                    <img src="assets/clipboard.svg" width="16" height="16" alt="Copy to clipboard" />
                 </button>
             </div>
             <div class="card-body">
@@ -35,11 +40,10 @@
         crossorigin="anonymous"></script>
 
     <script>
-        const button = document.getElementById("copyToClipboard");
-        const icon = document.getElementById("copyToClipboardIcon");
-        const clipboard = new ClipboardJS(button);
+        const clipboard = new ClipboardJS(".btn");
 
         clipboard.on('success', function (e) {
+            const icon = e.trigger.getElementsByTagName('img')[0];
             icon.src = "assets/check2.svg";
             window.setTimeout(function () {
                 icon.src = "assets/clipboard.svg";
