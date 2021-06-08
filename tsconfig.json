@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "ES2015",
         "module": "commonjs",
-        "outDir": "./demo/scripts/",
+        "outDir": "./docs/scripts/",
         "declaration": true,
         "removeComments": true,
         "strict": true,

@@ -3,8 +3,8 @@ version: "3.9"
 services:
     pseudo-demo:
         build: .
-        command: /app/node_modules/.bin/live-server /app/demo
+        command: /app/node_modules/.bin/live-server /app/docs
         ports:
             - "8080:8080"
         volumes:
-            - ./demo:/app/demo
+            - ./docs:/app/docs

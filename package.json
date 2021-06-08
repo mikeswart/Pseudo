@@ -2,8 +2,8 @@
     "name": "pseudo",
     "version": "1.0.0",
     "description": "Pseudo string generator",
-    "main": "./demo/scripts/psuedo.js",
-    "typings": "./demo/scripts/psuedo.d.ts",
+    "main": "./docs/scripts/psuedo.js",
+    "typings": "./docs/scripts/psuedo.d.ts",
     "scripts": {
         "prepare": "npm run build",
         "build": "tsc",
