@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-    pseudo-demo:
+    app:
         build: .
         command: /app/node_modules/.bin/live-server /app/docs
         ports:

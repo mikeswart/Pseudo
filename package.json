@@ -11,14 +11,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ferrata/Pseudo.git"
+        "url": "git+https://github.com/mikeswart/Pseudo.git"
     },
-    "author": "",
+    "author": "mikeswart",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/ferrata/Pseudo/issues"
+        "url": "https://github.com/mikeswart/Pseudo/issues"
     },
-    "homepage": "https://github.com/ferrata/Pseudo#readme",
+    "homepage": "https://github.com/mikeswart/Pseudo#readme",
     "devDependencies": {
         "live-server": "^1.2.1",
         "typescript": "^4.3.2"
