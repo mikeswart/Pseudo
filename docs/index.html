@@ -1,59 +1,78 @@
 <html>
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="scripts/psuedo.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+      integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="card">
-        <div class="card-header">
-            Source
-            &nbsp;
-            <button class="btn btn-light" data-clipboard-target="#source">
-                <img src="assets/clipboard.svg" width="16" height="16" alt="Copy to clipboard" />
-            </button>
+      <div class="card-header">
+        Source &nbsp;
+        <button class="btn btn-light" data-clipboard-target="#source">
+          <img
+            src="assets/clipboard.svg"
+            width="16"
+            height="16"
+            alt="Copy to clipboard"
+          />
+        </button>
+      </div>
+      <div class="card-body">
+        <textarea
+          id="source"
+          placeholder="Text to convert here"
+          class="form-control"
+          cols="40"
+          rows="5"
+          onchange="ConvertAndUpdate(this, pseudoTarget);"
+          oninput="this.onchange();"
+        ></textarea>
+      </div>
+      <div class="card">
+        <div class="card-header d-flex align-items-center">
+          Pseduo Text &nbsp;
+          <button class="btn btn-light" data-clipboard-target="#pseudoTarget">
+            <img
+              src="assets/clipboard.svg"
+              width="16"
+              height="16"
+              alt="Copy to clipboard"
+            />
+          </button>
         </div>
         <div class="card-body">
-            <textarea id="source" placeholder="Text to convert here" class="form-control" cols="40" rows="5"
-                onchange="ConvertAndUpdate(this, pseudoTarget);" oninput="this.onchange();"></textarea>
+          <textarea id="pseudoTarget" class="form-control" readonly></textarea>
         </div>
-        <div class="card">
-            <div class="card-header d-flex align-items-center">
-                Pseduo Text
-                &nbsp;
-                <button class="btn btn-light" data-clipboard-target="#pseudoTarget">
-                    <img src="assets/clipboard.svg" width="16" height="16" alt="Copy to clipboard" />
-                </button>
-            </div>
-            <div class="card-body">
-                <textarea id="pseudoTarget" class="form-control" readonly></textarea>
-            </div>
-        </div>
+      </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"
-        integrity="sha512-sIqUEnRn31BgngPmHt2JenzleDDsXwYO+iyvQ46Mw6RL+udAUZj2n/u/PGY80NxRxynO7R9xIGx5LEzw4INWJQ=="
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"
+      integrity="sha512-sIqUEnRn31BgngPmHt2JenzleDDsXwYO+iyvQ46Mw6RL+udAUZj2n/u/PGY80NxRxynO7R9xIGx5LEzw4INWJQ=="
+      crossorigin="anonymous"
+    ></script>
 
     <script>
-        const clipboard = new ClipboardJS(".btn");
+      const clipboard = new ClipboardJS(".btn");
 
-        clipboard.on('success', function (e) {
-            const icon = e.trigger.getElementsByTagName('img')[0];
-            icon.src = "assets/check2.svg";
-            window.setTimeout(function () {
-                icon.src = "assets/clipboard.svg";
-            }, 3000);
-        });
+      clipboard.on("success", function (e) {
+        const icon = e.trigger.getElementsByTagName("img")[0];
+        icon.src = "assets/check2.svg";
+        window.setTimeout(function () {
+          icon.src = "assets/clipboard.svg";
+        }, 3000);
+      });
 
-        clipboard.on('error', function (e) {
-            console.error(e);
-        });
+      clipboard.on("error", function (e) {
+        console.error(e);
+      });
     </script>
-</body>
-
+  </body>
 </html>
